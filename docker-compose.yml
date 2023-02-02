@@ -1,0 +1,36 @@
+version: "3.0"
+services:
+  frontend:
+    build: docker/node
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./frontend:/app"
+    networks:
+      - external
+    entrypoint: "npm start"
+  backend:
+    build: docker/node
+    ports:
+      - "3333:3333"
+    volumes:
+      - "./backend:/app"
+    networks:
+      - external
+      - internal
+    entrypoint: "node ace serve --watch"
+  database:
+    image: mysql:8.0
+    volumes:
+      - "./data:/var/lib/mysql"
+    environment:
+      - MYSQL_USER=todo
+      - MYSQL_PASSWORD=secret
+      - MYSQL_DATABASE=todo
+      - MYSQL_RANDOM_ROOT_PASSWORD=true
+    networks:
+      - internal
+
+networks:
+  internal:
+  external:

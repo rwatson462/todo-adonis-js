@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html {
+    font-size: 16px;
+}
+
+* {
+    font-size: 1rem;
+}
+
+body {
+    color: #eee;
+    background-color: #008080;
+    font-family: Nunito;
+    font-weight: 400;
+}
+
+b, strong, .bold, h1, h2, h3, h4, h5, h6, .title {
+    font-weight: 700;
+}
+
+pre, code, .fixed {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.todo-list {
+    max-width: 400px;
+}
+
+.todo-list, .todo-list li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.todo-list li:hover {
+    background-color: #0004;
+}
+
+.todo-title {
+    margin-left: 0.5rem;
+}
